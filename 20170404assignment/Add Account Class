@@ -1,0 +1,36 @@
+public class Account {
+	private String owner;
+	private long balance;
+	
+	public Account(){super();}
+	public Account(String owner){this.owner =owner;}
+	public Account(long balance){this.balance =balance;}
+	public Account(String owner,long balance){
+		this.owner =owner;
+		this.balance =balance;
+	}
+	public String getOwner(){return owner;}
+	public void setOwner(String owner) {this.owner =owner;}
+	public long getBalance() {return balance;}
+	public void setBalance(long balance) {this.balance = balance;}
+	
+	public long deposit(long amount){
+		long money =this.balance + amount;
+		this.balance = money;
+		System.out.println(amount+"원 입금하였습니다.\n잔액:"+(int)money);
+		return money;
+	}
+	public long withdraw(long amount){
+		long money= this.balance-amount;
+		System.out.println(amount+"원 출금하였습니다.\n잔액:"+(int)money);
+		this.balance =money;
+		return money;
+	}
+	public static void main(String[]args){
+		Account TJ =new Account(1000000);
+		TJ.withdraw(240000);
+		TJ.deposit(430000);
+		TJ.withdraw(23000);
+		System.out.println(TJ.getBalance());
+	}
+}
