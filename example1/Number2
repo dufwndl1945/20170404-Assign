@@ -1,0 +1,29 @@
+public class Student1 {
+
+    private String hakga;
+    private int hakbun;
+
+    public void setMajor(String major) {
+        this.hakga = major;
+    }
+
+    public void setNo(int no) {
+        this.hakbun = no;
+    }
+
+    public String getMajor() {
+        return hakga;
+    }
+
+    public int getNo() {
+        return hakbun;
+    }
+
+    public static void main(String[] args) {
+        Student1 student = new Student1();
+        student.hakga = "컴퓨터정보공학과";
+        student.hakbun = 20132773;
+
+        System.out.println("학번: " + student.getNo() + ", 학과: " + student.getMajor());
+    }
+}
